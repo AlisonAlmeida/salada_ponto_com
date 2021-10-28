@@ -19,26 +19,42 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('lib/assets/background_home_page.jpg'),
+                image: AssetImage('lib/assets/imgs/background_home_page.jpg'),
                 fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.deepOrangeAccent)),
-              child: Text(
-                'Salada.com',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 60,
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  height: 300,
+                  width: 500,
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey[400],
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                 ),
-              ),
+                Container(
+                  width: 500,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: const Text(
+                    'Salada.com',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'IrishGrover',
+                      color: Colors.orange,
+                      fontSize: 60,
+                    ),
+                  ),
+                ),
+              ],
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -48,15 +64,18 @@ class _HomePageState extends State<HomePage> {
                       MaterialStateProperty.all<Color>(Colors.white),
                   foregroundColor:
                       MaterialStateProperty.all<Color>(Colors.orange),
-                  animationDuration: Duration(seconds: 1),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: Colors.orange))),
+                    borderRadius: BorderRadius.circular(10.0),
+                  )),
                 ),
-                icon: Icon(Icons.arrow_forward_ios_sharp),
+                icon: Icon(Icons.arrow_forward_ios_sharp,
+                    color: Colors.blueGrey[400]),
                 onPressed: () {},
-                label: Text('Realizar pedido'),
+                label: Text(
+                  'Realizar pedido',
+                  style: TextStyle(color: Colors.blueGrey[400], fontSize: 30),
+                ),
               ),
             ),
           ],
