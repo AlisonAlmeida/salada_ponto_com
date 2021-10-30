@@ -31,25 +31,23 @@ class _HomePageState extends State<HomePage> {
               alignment: Alignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                  height: 300,
                   width: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey[400],
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                ),
-                Container(
-                  width: 500,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.blueGrey,
+                          spreadRadius: 1,
+                          blurRadius: 8,
+                          offset: Offset(0, 2))
+                    ],
                   ),
                   child: const Text(
                     'Salada.com',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'IrishGrover',
-                      color: Colors.orange,
+                      color: Colors.blueGrey,
                       fontSize: 60,
                     ),
                   ),
@@ -57,27 +55,20 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: ElevatedButton.icon(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.orange),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  )),
-                ),
-                icon: Icon(Icons.arrow_forward_ios_sharp,
-                    color: Colors.blueGrey[400]),
-                onPressed: () {},
-                label: Text(
-                  'Realizar pedido',
-                  style: TextStyle(color: Colors.blueGrey[400], fontSize: 30),
-                ),
-              ),
-            ),
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blueGrey,
+                    onPrimary: Colors.white,
+                    shadowColor: Colors.black,
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32.0)),
+                    minimumSize: const Size(100, 60),
+                  ),
+                  onPressed: () {},
+                  child: const Text('Fazer pedido'),
+                )),
           ],
         ),
       ),
