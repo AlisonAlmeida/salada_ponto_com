@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'request_item.dart';
 
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     super.initState();
   }
 
@@ -44,16 +45,29 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            RotationTransition(
-              turns: const AlwaysStoppedAnimation(15 / 360),
-              child: Container(
-                constraints:
-                    const BoxConstraints(maxWidth: 300, maxHeight: 300),
-                child: Image.asset('lib/assets/imgs/salada_homepage.png'),
-              ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  // width: MediaQuery.of(context).size.width,
+                  width: 500, height: 500,
+                  //height: MediaQuery.of(context).size.height,
+                  child: SvgPicture.asset(
+                    'lib/assets/imgs/blob.svg',
+                  ),
+                ),
+                RotationTransition(
+                  turns: const AlwaysStoppedAnimation(15 / 360),
+                  child: Container(
+                    constraints:
+                        const BoxConstraints(maxWidth: 300, maxHeight: 300),
+                    child: Image.asset('lib/assets/imgs/salada_homepage.png'),
+                  ),
+                ),
+              ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ElevatedButton.icon(
                 label: const Text(
                   'Realizar Pedido',

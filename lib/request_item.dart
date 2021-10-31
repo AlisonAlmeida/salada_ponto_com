@@ -10,8 +10,28 @@ class RequestItem extends StatefulWidget {
 class _RequestItemState extends State<RequestItem> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text(''),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
+        elevation: 0,
+      ),
+      body: Container(
+        color: Colors.orangeAccent,
+        child: Column(
+          children: [
+            Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.pink,
+                )),
+            Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.blue,
+                )),
+          ],
+        ),
+      ),
     );
   }
 }
