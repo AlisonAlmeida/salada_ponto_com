@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'request_item.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -24,58 +26,54 @@ class _HomePageState extends State<HomePage> {
                 image: AssetImage('lib/assets/imgs/background_home_page.jpg'),
                 fit: BoxFit.cover)),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
-                  height: 300,
-                  width: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey[400],
-                    borderRadius: BorderRadius.circular(25),
-                  ),
+            Container(
+              width: 500,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
+              child: const Text(
+                'Salada.com',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'IrishGrover',
+                  color: Colors.blueGrey,
+                  fontSize: 60,
                 ),
-                Container(
-                  width: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  child: const Text(
-                    'Salada.com',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'IrishGrover',
-                      color: Colors.orange,
-                      fontSize: 60,
-                    ),
-                  ),
-                ),
-              ],
+              ),
+            ),
+            RotationTransition(
+              turns: const AlwaysStoppedAnimation(15 / 360),
+              child: Container(
+                constraints:
+                    const BoxConstraints(maxWidth: 300, maxHeight: 300),
+                child: Image.asset('lib/assets/imgs/salada_homepage.png'),
+              ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
               child: ElevatedButton.icon(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.orange),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  )),
+                label: const Text(
+                  'Realizar Pedido',
+                  style: TextStyle(
+                    fontFamily: 'IrishGrover',
+                    fontSize: 30,
+                  ),
                 ),
-                icon: Icon(Icons.arrow_forward_ios_sharp,
-                    color: Colors.blueGrey[400]),
-                onPressed: () {},
-                label: Text(
-                  'Realizar pedido',
-                  style: TextStyle(color: Colors.blueGrey[400], fontSize: 30),
-                ),
+                icon: const Icon(Icons.arrow_right_rounded),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RequestItem()));
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.blueGrey,
+                    fixedSize: const Size(0, 70),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
               ),
             ),
           ],
