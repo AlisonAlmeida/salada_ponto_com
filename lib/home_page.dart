@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-<<<<<<< HEAD
             Container(
               width: 500,
               decoration: const BoxDecoration(
@@ -42,32 +41,6 @@ class _HomePageState extends State<HomePage> {
                   fontFamily: 'IrishGrover',
                   color: Colors.blueGrey,
                   fontSize: 60,
-=======
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 500,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.blueGrey,
-                          spreadRadius: 1,
-                          blurRadius: 8,
-                          offset: Offset(0, 2))
-                    ],
-                  ),
-                  child: const Text(
-                    'Salada.com',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'IrishGrover',
-                      color: Colors.blueGrey,
-                      fontSize: 60,
-                    ),
-                  ),
->>>>>>> 961898c07047d4f9839542d4b1b4b90c4804b062
                 ),
               ),
             ),
@@ -80,7 +53,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-<<<<<<< HEAD
               padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
               child: ElevatedButton.icon(
                 label: const Text(
@@ -104,22 +76,6 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(50))),
               ),
             ),
-=======
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blueGrey,
-                    onPrimary: Colors.white,
-                    shadowColor: Colors.black,
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32.0)),
-                    minimumSize: const Size(100, 60),
-                  ),
-                  onPressed: () {},
-                  child: const Text('Fazer pedido'),
-                )),
->>>>>>> 961898c07047d4f9839542d4b1b4b90c4804b062
           ],
         ),
       ),
