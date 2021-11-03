@@ -22,10 +22,11 @@ class _RequestPageState extends State<RequestPage> {
                 fit: BoxFit.cover)),
         child: Column(
           children: [
-            Expanded(flex: 3, child: Container()),
+            Expanded(flex: 4, child: Container()),
             Expanded(
-                flex: 1,
+                flex: 3,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Row(
                       children: [
@@ -45,33 +46,180 @@ class _RequestPageState extends State<RequestPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          'Seu pedido está vazio',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        ListView(
+                          shrinkWrap: true,
                           children: [
-                            ElevatedButton(
-                              child: Text('Cancelar Pedido'),
-                              style: ElevatedButton.styleFrom(
-                                minimumSize: Size(
-                                    MediaQuery.of(context).size.width / 2, 30),
-                              ),
-                              onPressed: () {},
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
-                            ElevatedButton(
-                              child: Text('Concluir Pedido'),
-                              style: ElevatedButton.styleFrom(
-                                minimumSize: Size(
-                                    MediaQuery.of(context).size.width / 2, 30),
-                              ),
-                              onPressed: () {},
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  'Seu pedido está vazio',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
-                        )
+                        ),
                       ],
+                    ),
+                  ],
+                )),
+            Expanded(
+                flex: 1,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
+                      child: const Text('Cancelar Pedido'),
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.only(top: 12, bottom: 12),
+                        primary: Colors.red,
+                        minimumSize:
+                            Size(MediaQuery.of(context).size.width / 2, 30),
+                      ),
+                      onPressed: () {},
+                    ),
+                    ElevatedButton(
+                      child: const Text('Concluir Pedido'),
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.only(top: 12, bottom: 12),
+                        primary: Colors.green,
+                        minimumSize:
+                            Size(MediaQuery.of(context).size.width / 2, 30),
+                      ),
+                      onPressed: () {},
                     ),
                   ],
                 )),
