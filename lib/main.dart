@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:salada_ponto_com/home_page.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,8 +15,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
