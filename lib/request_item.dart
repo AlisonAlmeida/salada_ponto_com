@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class RequestPage extends StatefulWidget {
@@ -19,11 +21,22 @@ class _RequestPageState extends State<RequestPage> {
                 fit: BoxFit.cover)),
         child: Column(
           children: [
-            Expanded(flex: 3, child: Container()),
+            Expanded(
+                flex: 3,
+                child: Column(
+                  children: [
+                    ListTile(
+                        enabled: false,
+                        leading: const Icon(Icons.flight_land),
+                        title: const Text("Trix's airplane"),
+                        subtitle: const Text('The airplane is only in Act II.'),
+                        onTap: () => log("ListTile")),
+                  ],
+                )),
             Expanded(
                 flex: 1,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Row(
                       children: [

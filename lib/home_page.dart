@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -50,9 +51,9 @@ class _HomePageState extends State<HomePage> {
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     // width: MediaQuery.of(context).size.width,
-                    width: 500, height: 500,
+                    width: 50, height:50,
                     //height: MediaQuery.of(context).size.height,
                     child: SvgPicture.asset(
                       'lib/assets/imgs/blob.svg',
