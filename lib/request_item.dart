@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class RequestPage extends StatefulWidget {
   const RequestPage({Key? key}) : super(key: key);
@@ -10,6 +11,12 @@ class RequestPage extends StatefulWidget {
 }
 
 class _RequestPageState extends State<RequestPage> {
+  @override
+  void initState() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,11 +33,12 @@ class _RequestPageState extends State<RequestPage> {
                 child: Column(
                   children: [
                     ListTile(
-                        enabled: false,
+                        enabled: true,
                         leading: const Icon(Icons.flight_land),
                         title: const Text("Trix's airplane"),
                         subtitle: const Text('The airplane is only in Act II.'),
-                        onTap: () => log("ListTile")),
+                        onTap: () =>
+                            log("ListTile", time: DateTime.now())),
                   ],
                 )),
             Expanded(
