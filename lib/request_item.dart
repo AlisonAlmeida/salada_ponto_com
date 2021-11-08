@@ -29,18 +29,20 @@ class _RequestPageState extends State<RequestPage> {
         child: Column(
           children: [
             Expanded(
-                flex: 3,
-                child: Column(
-                  children: [
-                    ListTile(
-                        enabled: true,
-                        leading: const Icon(Icons.flight_land),
-                        title: const Text("Trix's airplane"),
-                        subtitle: const Text('The airplane is only in Act II.'),
-                        onTap: () =>
-                            log("ListTile", time: DateTime.now())),
-                  ],
-                )),
+              flex: 3,
+              child: ListView(
+                children: const [
+                  ItemCard(),
+                  ItemCard(),
+                  ItemCard(),
+                  ItemCard(),
+                  ItemCard(),
+                  ItemCard(),
+                  ItemCard(),
+                  ItemCard(),
+                ],
+              ),
+            ),
             Expanded(
                 flex: 1,
                 child: Column(
@@ -117,6 +119,44 @@ class _RequestPageState extends State<RequestPage> {
           ],
         ),
       ],
+    );
+  }
+}
+
+class ItemCard extends StatelessWidget {
+  const ItemCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Container(
+        height: 100,
+        color: Colors.white,
+        child: Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Image.asset('lib/assets/imgs/salada_homepage.png'),
+            ),
+            Expanded(
+                flex: 5,
+                child: ListTile(
+                  title: Text("R\$ 10,00", style: TextStyle(fontSize: 40)),
+                  subtitle: Text("3 Complementos"),
+                )),
+            Expanded(
+                flex: 2,
+                child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.orange,
+                    child: Icon(Icons.arrow_forward,
+                        color: Colors.white, size: 60))),
+          ],
+        ),
+      ),
     );
   }
 }
