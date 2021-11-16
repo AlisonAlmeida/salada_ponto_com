@@ -18,9 +18,11 @@ class _HomePageState extends State<HomePage> {
         SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.white));
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(

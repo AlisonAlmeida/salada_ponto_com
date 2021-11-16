@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:salada_ponto_com/login_page.dart';
+
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
